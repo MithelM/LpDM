@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TocaDoCoelho extends Activity {
 
@@ -23,14 +24,14 @@ public class TocaDoCoelho extends Activity {
     }
 
     public void onClickButConsul(View view){
-        TextView consultaHoras = (TextView) findViewById(R.id.texto);
 
-        consultaHoras.setText("Total de Horas");
+        Intent intent = new Intent(this, CronometroExpediente.class);
+        startActivity(intent);
     }
 
     public void onClickButPedido(View view){
-        Intent intent = new Intent(this, PedidoAtendente.class);
 
+        Intent intent = new Intent(this, PedidoAtendente.class);
         startActivity(intent);
     }
 
