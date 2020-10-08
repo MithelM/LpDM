@@ -20,12 +20,12 @@ public class CronometroExpediente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cronometro_expediente);
         exec = false;
-        estavaExec = true;
+        estavaExec = false;
 
         if(savedInstanceState != null){
-            seg = savedInstanceState.getInt("Segundos");
-            exec = savedInstanceState.getBoolean("Executando");
-            estavaExec = savedInstanceState.getBoolean("EstavaExecutando");
+            seg = savedInstanceState.getInt("segundos");
+            exec = savedInstanceState.getBoolean("executando");
+            estavaExec = savedInstanceState.getBoolean("estavaExecutando");
 
         }
 
@@ -40,7 +40,7 @@ public class CronometroExpediente extends AppCompatActivity {
 
         super.onSaveInstanceState((savedInstanceState));
     }
-
+    @Override
     protected void onPause() {
         super.onPause();
         estavaExec = exec;
